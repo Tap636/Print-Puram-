@@ -1,14 +1,50 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Email Contact</title>
+  <title>Contact PrintPuram</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #fdf6f0; /* same light background as logo */
+    }
+    .logo {
+      width: 250px; /* adjust size if needed */
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #333;
+      margin-top: 10px;
+    }
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
+      color: #fff;
+      background: #d93025; /* Gmail Red */
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    a.button:hover {
+      background: #b1271b;
+    }
+  </style>
 </head>
 <body>
-  <h2>Contact Us</h2>
-  <a href="mailto:puramprint@gmail.com?subject=Enquiry&body=Namaste PrintPuram,">
-    Send Email via Gmail
+  <!-- Logo in center -->
+  <img src="logo.png" alt="PrintPuram Logo" class="logo">
+  
+  <!-- Heading -->
+  <h2>Mail Us:</h2>
+
+  <!-- Gmail link -->
+  <a class="button" href="mailto:puramprint@gmail.com?subject=Enquiry&body=Namaste PrintPuram,">
+    Send Email
   </a>
 </body>
 </html>
