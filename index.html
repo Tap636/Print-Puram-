@@ -4,65 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact PrintPuram</title>
-  <!-- Google Font: Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
     body {
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
-      padding: 40px;
       margin: 0;
       height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(180deg, #3A2317, #5a3a2a);
-      color: #F3E8DA;
+      flex-direction: column;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #3A2317, #F3E8DA);
+      overflow: hidden; /* Prevent scrolling */
     }
+
     .logo {
-      width: 250px; 
-      margin-bottom: 15px;
+      width: 200px;
+      margin-bottom: 10px; /* reduced spacing */
     }
-    h1 {
-      font-weight: 900; /* Montserrat Black */
-      font-size: 32px;
-      margin: 10px 0 5px;
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #3A2317;
+      margin: 5px 0;
     }
-    h3 {
-      font-weight: 400; /* lighter font */
-      font-size: 18px;
-      margin: 0 0 30px;
-      color: #F3E8DA;
+
+    .subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: #3A2317;
+      margin: 0 0 20px 0;
     }
+
     a.button {
       display: inline-block;
-      padding: 14px 28px;
-      font-size: 18px;
-      font-weight: 900; /* Montserrat Black */
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
       color: #F3E8DA;
       background: #3A2317;
-      border: 2px solid #F3E8DA;
       text-decoration: none;
-      border-radius: 10px;
-      transition: all 0.3s ease;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
+
     a.button:hover {
-      background: #F3E8DA;
-      color: #3A2317;
+      background: #2a1910;
     }
   </style>
 </head>
 <body>
   <!-- Logo -->
   <img src="logo.png" alt="PrintPuram Logo" class="logo">
-  
-  <!-- Heading and subheading -->
-  <h1>Print Puram</h1>
-  <h3>Print Perfect Hai !</h3>
 
-  <!-- Gmail link -->
-  <h2>Mail Us:</h2>
+  <!-- Texts -->
+  <div class="title">Print Puram</div>
+  <div class="subtitle">Print Perfect Hai !</div>
+
+  <!-- Email Button -->
   <a class="button" href="mailto:puramprint@gmail.com?subject=Enquiry&body=Namaste PrintPuram,">
     Send Email
   </a>
