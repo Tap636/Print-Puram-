@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Email Namaste PrintPuram</title>
+  <script>
+    function openGmail() {
+      // Try Gmail app
+      window.location = "intent://co?to=puramprint@gmail.com&subject=Enquiry&body=Namaste%20PrintPuram%2C%20#Intent;scheme=googlegmail;package=com.google.android.gm;end";
+      
+      // Fallback to Gmail web after 800ms
+      setTimeout(function() {
+        window.location = "https://mail.google.com/mail/?view=cm&fs=1&to=puramprint@gmail.com&su=Enquiry&body=Namaste%20PrintPuram%2C%20";
+      }, 800);
+    }
+    window.onload = openGmail;
+  </script>
+</head>
+<body>
+  <p>Opening Gmail…  
+     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=puramprint@gmail.com&su=Enquiry&body=Namaste%20PrintPuram%2C%20">
+       Click here if nothing happens
+     </a>
+  </p>
+</body>
+</html>
