@@ -1,26 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Email Namaste PrintPuram</title>
-  <script>
-    function openGmail() {
-      // Try Gmail app
-      window.location = "intent://co?to=puramprint@gmail.com&subject=Enquiry&body=Namaste%20PrintPuram%2C%20#Intent;scheme=googlegmail;package=com.google.android.gm;end";
-      
-      // Fallback to Gmail web after 800ms
-      setTimeout(function() {
-        window.location = "https://mail.google.com/mail/?view=cm&fs=1&to=puramprint@gmail.com&su=Enquiry&body=Namaste%20PrintPuram%2C%20";
-      }, 800);
-    }
-    window.onload = openGmail;
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact PrintPuram</title>
 </head>
 <body>
-  <p>Opening Gmail…  
-     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=puramprint@gmail.com&su=Enquiry&body=Namaste%20PrintPuram%2C%20">
-       Click here if nothing happens
-     </a>
-  </p>
+  <h2>Click below to send us an email:</h2>
+  <a href="mailto:puramprint@gmail.com?subject=Enquiry&body=Namaste%20PrintPuram," style="font-size:20px; text-decoration:none; color:white; background:#007BFF; padding:10px 20px; border-radius:5px;">
+    📧 Send Email
+  </a>
 </body>
 </html>
