@@ -22,28 +22,27 @@
     .container {
       display: flex;
       flex-direction: column;
+      justify-content: space-between; /* equal spacing */
       align-items: center;
-      /* shift everything a little up */
-      transform: translateY(-8%);
+      height: 320px; /* fixed compact block */
     }
 
     .logo {
       width: 160px;
-      margin-bottom: 16px; /* spacing after logo */
     }
 
     .title {
       font-size: 24px;
       font-weight: 700;
       color: #3A2317;
-      margin: 0 0 6px 0; /* tighter gap between title & subtitle */
+      margin: 0;
     }
 
     .subtitle {
       font-size: 16px;
       font-weight: 400;
       color: #3A2317;
-      margin: 0 0 16px 0; /* equal to logo bottom spacing */
+      margin: 0;
     }
 
     a.button {
@@ -70,8 +69,10 @@
     <img src="logo.png" alt="PrintPuram Logo" class="logo">
 
     <!-- Texts -->
-    <div class="title">Print Puram</div>
-    <div class="subtitle">Print Perfect Hai !</div>
+    <div>
+      <div class="title">Print Puram</div>
+      <div class="subtitle">Print Perfect Hai !</div>
+    </div>
 
     <!-- Email Button -->
     <a class="button" href="mailto:puramprint@gmail.com?subject=Enquiry&body=Namaste PrintPuram,">
