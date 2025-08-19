@@ -13,36 +13,36 @@
       font-family: 'Montserrat', sans-serif;
       text-align: center;
       background: linear-gradient(135deg, #3A2317, #F3E8DA);
-      overflow: hidden;
       display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .container {
-      margin: auto; /* center horizontally & vertically */
+    .wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 5vh;   /* pushes logo slightly above center */
-      padding-bottom: 5vh;/* keeps bottom balanced */
+      position: relative;
+      top: -5%; /* shifts block slightly upward */
     }
 
     .logo {
-      width: 160px;
-      margin-bottom: 20px; /* equal gap with subtitle */
+      width: 150px;
+      margin-bottom: 18px; /* equal spacing */
     }
 
     .title {
       font-size: 24px;
       font-weight: 700;
       color: #3A2317;
-      margin: 0 0 6px 0; /* tight gap */
+      margin: 0 0 6px 0; /* small gap */
     }
 
     .subtitle {
       font-size: 16px;
       font-weight: 400;
       color: #3A2317;
-      margin: 0 0 20px 0; /* equal to logo gap */
+      margin: 0 0 18px 0; /* equal to logo spacing */
     }
 
     a.button {
@@ -50,7 +50,6 @@
       padding: 12px 24px;
       font-size: 16px;
       font-weight: 700;
-      font-family: 'Montserrat', sans-serif;
       color: #F3E8DA;
       background: #3A2317;
       text-decoration: none;
@@ -64,7 +63,7 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrapper">
     <img src="logo.png" alt="PrintPuram Logo" class="logo">
 
     <div class="title">Print Puram</div>
