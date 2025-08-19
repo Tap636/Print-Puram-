@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact PrintPuram</title>
 
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-
-  <!-- Cache Busting -->
+  <!-- Stop caching -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -20,43 +20,37 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       font-family: 'Montserrat', sans-serif;
       text-align: center;
       background: linear-gradient(135deg, #3A2317, #F3E8DA);
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px; /* equal spacing between all items */
+      overflow: hidden;
     }
 
     .logo {
       width: 180px;
-      margin-bottom: 12px;
+      margin-bottom: 20px; /* space below logo */
     }
 
     .title {
       font-size: 24px;
       font-weight: 700;
       color: #3A2317;
+      margin: 0 0 12px 0; /* space below title */
     }
 
     .subtitle {
       font-size: 16px;
       font-weight: 400;
       color: #3A2317;
-      margin-bottom: 24px; /* extra space before button */
+      margin: 0 0 24px 0; /* more space before button */
     }
 
     a.button {
       display: inline-block;
-      padding: 12px 28px;
+      padding: 12px 24px;
       font-size: 16px;
       font-weight: 700;
-      font-family: 'Montserrat', sans-serif;
       color: #F3E8DA;
       background: #3A2317;
       text-decoration: none;
@@ -70,29 +64,16 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Logo -->
-    <img id="logo" src="logo.png" alt="PrintPuram Logo" class="logo">
+  <!-- Logo (renamed to break cache) -->
+  <img src="logo-new.png" alt="PrintPuram Logo" class="logo">
 
-    <!-- Texts -->
-    <div class="title">Print Puram</div>
-    <div class="subtitle">Print Perfect Hai !</div>
+  <!-- Texts -->
+  <div class="title">Print Puram</div>
+  <div class="subtitle">Print Perfect Hai !</div>
 
-    <!-- Email Button -->
-    <a class="button" href="mailto:puramprint@gmail.com?subject=Enquiry&body=Namaste PrintPuram,">
-      Send Email
-    </a>
-  </div>
-
-  <!-- 🔥 Automatic Cache-Busting Script -->
-  <script>
-    const timestamp = new Date().getTime();
-    document.querySelectorAll("img, link[rel='stylesheet'], script").forEach(el => {
-      const attr = el.tagName === "IMG" ? "src" : "href";
-      if (el.hasAttribute(attr)) {
-        el.setAttribute(attr, el.getAttribute(attr) + "?v=" + timestamp);
-      }
-    });
-  </script>
+  <!-- Email Button -->
+  <a class="button" href="mailto:puramprint@gmail.com?subject=Enquiry&body=Namaste PrintPuram,">
+    Send Email
+  </a>
 </body>
 </html>
