@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact PrintPuram</title>
 
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
+  <!-- Cache Busting -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #3A2317, #F3E8DA);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px; /* equal spacing between all items */
+    }
+
+    .logo {
+      width: 180px;
+      margin-bottom: 12px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #3A2317;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: #3A2317;
+      margin-bottom: 24px; /* extra space before button */
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      color: #F3E8DA;
+      background: #3A2317;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    a.button:hover {
+      background: #2a1910;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <img id="logo" src="logo.png" alt="PrintPuram Logo" class="logo">
+
+    <!-- Texts -->
+    <div class="title">Print Puram</div>
+    <div class="subtitle">Print Perfect Hai !</div>
+
+    <!-- Email Button -->
+    <a class="button" href="mailto:puramprint@gmail.com?subject=Enquiry&body=Namaste PrintPuram,">
+      Send Email
+    </a>
+  </div>
+
+  <!-- 🔥 Automatic Cache-Busting Script -->
+  <script>
+    const timestamp = new Date().getTime();
+    document.querySelectorAll("img, link[rel='stylesheet'], script").forEach(el => {
+      const attr = el.tagName === "IMG" ? "src" : "href";
+      if (el.hasAttribute(attr)) {
+        el.setAttribute(attr, el.getAttribute(attr) + "?v=" + timestamp);
+      }
+    });
+  </script>
+</body>
+</html>
