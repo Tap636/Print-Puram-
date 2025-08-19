@@ -10,39 +10,39 @@
     body {
       margin: 0;
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-family: 'Montserrat', sans-serif;
       text-align: center;
       background: linear-gradient(135deg, #3A2317, #F3E8DA);
       overflow: hidden;
+      display: flex;
     }
 
     .container {
+      margin: auto; /* center horizontally & vertically */
       display: flex;
       flex-direction: column;
       align-items: center;
-      transform: translateY(-6%); /* move whole block a bit up */
+      padding-top: 5vh;   /* pushes logo slightly above center */
+      padding-bottom: 5vh;/* keeps bottom balanced */
     }
 
     .logo {
       width: 160px;
-      margin-bottom: 20px; /* same as subtitle bottom */
+      margin-bottom: 20px; /* equal gap with subtitle */
     }
 
     .title {
       font-size: 24px;
       font-weight: 700;
       color: #3A2317;
-      margin: 0 0 6px 0; /* small gap between name & subtitle */
+      margin: 0 0 6px 0; /* tight gap */
     }
 
     .subtitle {
       font-size: 16px;
       font-weight: 400;
       color: #3A2317;
-      margin: 0 0 20px 0; /* same as logo bottom margin */
+      margin: 0 0 20px 0; /* equal to logo gap */
     }
 
     a.button {
@@ -65,14 +65,11 @@
 </head>
 <body>
   <div class="container">
-    <!-- Logo -->
     <img src="logo.png" alt="PrintPuram Logo" class="logo">
 
-    <!-- Texts -->
     <div class="title">Print Puram</div>
     <div class="subtitle">Print Perfect Hai !</div>
 
-    <!-- Email Button -->
     <a class="button" href="mailto:puramprint@gmail.com?subject=Enquiry&body=Namaste PrintPuram,">
       Send Email
     </a>
