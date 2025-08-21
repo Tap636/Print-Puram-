@@ -18,32 +18,45 @@
       margin: 0;
       height: 100vh;
       display: flex;
-      justify-content: top;
-      align-items: center;
       flex-direction: column;
+      align-items: center;
       font-family: 'Montserrat', sans-serif;
       text-align: center;
       background: linear-gradient(135deg, #3A2317, #F3E8DA);
-      overflow: hidden;
     }
 
     .logo {
       width: 180px;
-      margin-bottom: 0px; /* space below logo */
+      margin-top: 20px;
     }
 
     .title {
       font-size: 24px;
       font-weight: 700;
       color: #3A2317;
-      margin: 0 0 12px 0; /* space below title */
+      margin: 10px 0 5px 0;
     }
 
     .subtitle {
       font-size: 16px;
       font-weight: 400;
       color: #3A2317;
-      margin: 0 0 24px 0; /* more space before button */
+      margin: 0 0 10px 0;
+    }
+
+    .mail-heading {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3A2317;
+      margin: 10px 0 25px 0;
+      text-decoration: underline;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     a.button {
@@ -64,16 +77,35 @@
   </style>
 </head>
 <body>
-  <!-- Logo (renamed to break cache) -->
+  <!-- Logo -->
   <img src="logo-new.png" alt="PrintPuram Logo" class="logo">
 
   <!-- Texts -->
   <div class="title">Print Puram</div>
   <div class="subtitle">Print Perfect Hai !</div>
 
-  <!-- Email Button -->
-  <a class="button" href="mailto:puramprint@gmail.com?subject=Enquiry&body=Namaste PrintPuram,">
-    Send Email
-  </a>
+  <!-- Mail Us heading -->
+  <div class="mail-heading">Mail Us</div>
+
+  <!-- Buttons -->
+  <div class="button-container">
+    <a href="#" class="button" onclick="sendMail('Raise Query')">Raise Query</a>
+    <a href="#" class="button" onclick="sendMail('Complaints')">Complaints</a>
+    <a href="#" class="button" onclick="sendMail('Suggestions')">Suggestions</a>
+  </div>
+
+  <script>
+    function generateCode() {
+      // Random 6-digit alphanumeric code
+      return Math.random().toString(36).substr(2, 6).toUpperCase();
+    }
+
+    function sendMail(subject) {
+      const code = generateCode();
+      const email = "puramprint@gmail.com";
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject + " - " + code)}&body=Namaste PrintPuram,`;
+      window.location.href = mailtoLink;
+    }
+  </script>
 </body>
 </html>
