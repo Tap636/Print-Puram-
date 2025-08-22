@@ -12,6 +12,8 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     body {
@@ -57,7 +59,6 @@
       gap: 15px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 10px;
     }
 
     a.button {
@@ -77,12 +78,6 @@
     a.button:hover {
       background: #2a1910;
     }
-
-    .icon {
-      width: 18px;
-      height: 18px;
-      fill: #F3E8DA;
-    }
   </style>
 </head>
 <body>
@@ -93,19 +88,17 @@
   <div class="title">Print Puram</div>
   <div class="subtitle">Print Perfect Hai !</div>
 
-  <!-- Call Now Button -->
-  <a href="#" id="callButton" class="button">
-    <!-- Call icon (SVG) -->
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-      <path d="M3.654 1.328a.678.678 0 0 1 1.015-.063L6.29 2.925c.329.329.445.82.287 1.254l-.547 1.52a.678.678 0 0 1-.58.44c-.69.073-1.043.614-1.272 1.155-.195.462-.335.967-.42 1.49-.084.523-.09 1.057-.018 1.572.071.516.227 1.018.46 1.478.232.459.546.878.923 1.255.377.377.796.691 1.255.923.46.233.962.389 1.478.46.515.072 1.049.066 1.572-.018.523-.085 1.028-.225 1.49-.42.541-.229 1.082-.582 1.155-1.272a.678.678 0 0 1 .44-.58l1.52-.547c.434-.158.925-.042 1.254.287l1.66 1.66a.678.678 0 0 1-.063 1.015c-1.354 1.2-3.087 1.915-4.936 1.915-4.418 0-8-3.582-8-8 0-1.849.715-3.582 1.915-4.936z"/>
-    </svg>
-    Call Now
-  </a>
+  <!-- Call Us Button -->
+  <div class="button-container" style="margin-bottom:20px;">
+    <a href="#" class="button" onclick="callUs()">
+      <i class="fas fa-phone"></i> Call Us
+    </a>
+  </div>
 
   <!-- Mail Us heading -->
   <div class="mail-heading">Mail Us</div>
 
-  <!-- Email Buttons -->
+  <!-- Buttons -->
   <div class="button-container">
     <a href="#" class="button" onclick="sendMail('Raise Query')">Raise Query</a>
     <a href="#" class="button" onclick="sendMail('Complaints')">Complaints</a>
@@ -125,25 +118,19 @@
       window.location.href = mailtoLink;
     }
 
-    // Call Button logic
-    const callButton = document.getElementById("callButton");
-    const phoneNumber = "918888888888"; // Replace with your real number
-
-    callButton.addEventListener("click", function (e) {
-      e.preventDefault();
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-      if (/android/i.test(userAgent)) {
-        // Android → Try WhatsApp call
-        window.location.href = "intent://send/" + phoneNumber + "#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end;";
-      } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-        // iOS → Normal dialer
-        window.location.href = "tel:" + phoneNumber;
+    function callUs() {
+      const phoneNumber = "919027085434"; // Change to your number
+      if (/android/i.test(navigator.userAgent)) {
+        // ✅ WhatsApp Call (Android)
+        window.location.href = `whatsapp://call?phone=${phoneNumber}`;
+      } else if (/iphone|ipad|ipod/i.test(navigator.userAgent)) {
+        // ✅ iOS → Normal Dialer
+        window.location.href = `tel:${phoneNumber}`;
       } else {
-        // Other devices → Normal dialer
-        window.location.href = "tel:" + phoneNumber;
+        // ✅ Fallback for desktop/other devices
+        window.location.href = `tel:${phoneNumber}`;
       }
-    });
+    }
   </script>
 </body>
 </html>
