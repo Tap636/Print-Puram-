@@ -54,6 +54,14 @@
       text-decoration: underline;
     }
 
+    .button-container {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
     a.button {
       display: inline-flex;
       align-items: center;
@@ -61,23 +69,15 @@
       padding: 12px 24px;
       font-size: 16px;
       font-weight: 700;
-      color: #fff;
-      background: #25D366; /* WhatsApp green */
+      color: #F3E8DA;
+      background: #3A2317;
       text-decoration: none;
       border-radius: 8px;
       transition: background 0.3s;
-      margin-top: 10px;
     }
 
     a.button:hover {
-      background: #1ebd5a;
-    }
-
-    .button-container {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
+      background: #2a1910;
     }
   </style>
 </head>
@@ -90,7 +90,7 @@
   <div class="subtitle">Print Perfect Hai !</div>
 
   <!-- WhatsApp Call Button -->
-  <a href="https://wa.me/919027085434?text=Hello%20PrintPuram%2C%20I%20want%20to%20call%20you." target="_blank" class="button">
+  <a href="https://wa.me/916396962717?text=Hello%20PrintPuram%2C%20I%20want%20to%20call%20you." target="_blank" class="button">
     <i class="fab fa-whatsapp"></i> Call Now
   </a>
 
@@ -99,9 +99,9 @@
 
   <!-- Email Buttons -->
   <div class="button-container">
-    <a href="#" class="button" style="background:#3A2317;" onclick="sendMail('Raise Query')">Raise Query</a>
-    <a href="#" class="button" style="background:#3A2317;" onclick="sendMail('Complaints')">Complaints</a>
-    <a href="#" class="button" style="background:#3A2317;" onclick="sendMail('Suggestions')">Suggestions</a>
+    <a href="#" class="button" onclick="sendMail('Raise Query')">Raise Query</a>
+    <a href="#" class="button" onclick="sendMail('Complaints')">Complaints</a>
+    <a href="#" class="button" onclick="sendMail('Suggestions')">Suggestions</a>
   </div>
 
   <script>
