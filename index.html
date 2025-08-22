@@ -10,76 +10,137 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-  <!-- Styles -->
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
-      background-color: #f9f9f9;
-    }
-    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Montserrat', sans-serif;
       text-align: center;
+      background: linear-gradient(135deg, #3A2317, #F3E8DA);
     }
-    .button {
+
+    .logo {
+      width: 180px;
+      margin-top: 20px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #3A2317;
+      margin: 10px 0 5px 0;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: #3A2317;
+      margin: 0 0 10px 0;
+    }
+
+    .mail-heading {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3A2317;
+      margin: 10px 0 25px 0;
+      text-decoration: underline;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    a.button {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      background-color: #007bff;
-      color: white;
-      padding: 14px 28px;
-      margin: 12px;
-      border: none;
-      border-radius: 8px;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #F3E8DA;
+      background: #3A2317;
       text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
-    .button:hover {
-      background-color: #0056b3;
+
+    a.button:hover {
+      background: #2a1910;
     }
-    .button svg {
-      margin-right: 10px;
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      fill: #F3E8DA;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Call Button -->
-    <a id="callButton" class="button">
-      <!-- Call Icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M3.654 1.328a.678.678 0 0 1 1.015-.063L6.29 2.925c.329.329.445.82.287 1.254l-.547 1.52a.678.678 0 0 1-.58.44c-.69.073-1.043.614-1.272 1.155-.195.462-.335.967-.42 1.49-.084.523-.09 1.057-.018 1.572.071.516.227 1.018.46 1.478.232.459.546.878.923 1.255.377.377.796.691 1.255.923.46.233.962.389 1.478.46.515.072 1.049.066 1.572-.018.523-.085 1.028-.225 1.49-.42.541-.229 1.082-.582 1.155-1.272a.678.678 0 0 1 .44-.58l1.52-.547c.434-.158.925-.042 1.254.287l1.66 1.66a.678.678 0 0 1-.063 1.015c-1.354 1.2-3.087 1.915-4.936 1.915-4.418 0-8-3.582-8-8 0-1.849.715-3.582 1.915-4.936z"/>
-      </svg>
-      Call Now
-    </a>
+  <!-- Logo -->
+  <img src="logo-new.png" alt="PrintPuram Logo" class="logo">
 
-    <!-- Mail Button -->
-    <a href="mailto:info@printpuram.com" class="button">
-      Mail Us
-    </a>
+  <!-- Texts -->
+  <div class="title">Print Puram</div>
+  <div class="subtitle">Print Perfect Hai !</div>
+
+  <!-- Call Now Button -->
+  <a href="#" id="callButton" class="button">
+    <!-- Call icon (SVG) -->
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+      <path d="M3.654 1.328a.678.678 0 0 1 1.015-.063L6.29 2.925c.329.329.445.82.287 1.254l-.547 1.52a.678.678 0 0 1-.58.44c-.69.073-1.043.614-1.272 1.155-.195.462-.335.967-.42 1.49-.084.523-.09 1.057-.018 1.572.071.516.227 1.018.46 1.478.232.459.546.878.923 1.255.377.377.796.691 1.255.923.46.233.962.389 1.478.46.515.072 1.049.066 1.572-.018.523-.085 1.028-.225 1.49-.42.541-.229 1.082-.582 1.155-1.272a.678.678 0 0 1 .44-.58l1.52-.547c.434-.158.925-.042 1.254.287l1.66 1.66a.678.678 0 0 1-.063 1.015c-1.354 1.2-3.087 1.915-4.936 1.915-4.418 0-8-3.582-8-8 0-1.849.715-3.582 1.915-4.936z"/>
+    </svg>
+    Call Now
+  </a>
+
+  <!-- Mail Us heading -->
+  <div class="mail-heading">Mail Us</div>
+
+  <!-- Email Buttons -->
+  <div class="button-container">
+    <a href="#" class="button" onclick="sendMail('Raise Query')">Raise Query</a>
+    <a href="#" class="button" onclick="sendMail('Complaints')">Complaints</a>
+    <a href="#" class="button" onclick="sendMail('Suggestions')">Suggestions</a>
   </div>
 
   <script>
-    const callButton = document.getElementById("callButton");
-    const phoneNumber = "916396962717"; // Replace with your number
+    function generateCode() {
+      // Random 6-digit alphanumeric code
+      return Math.random().toString(36).substr(2, 6).toUpperCase();
+    }
 
-    callButton.addEventListener("click", function () {
+    function sendMail(subject) {
+      const code = generateCode();
+      const email = "puramprint@gmail.com";
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject + " - " + code)}&body=Namaste PrintPuram,`;
+      window.location.href = mailtoLink;
+    }
+
+    // Call Button logic
+    const callButton = document.getElementById("callButton");
+    const phoneNumber = "918888888888"; // Replace with your real number
+
+    callButton.addEventListener("click", function (e) {
+      e.preventDefault();
       const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
       if (/android/i.test(userAgent)) {
         // Android → Try WhatsApp call
         window.location.href = "intent://send/" + phoneNumber + "#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end;";
       } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-        // iOS → Open dialer
+        // iOS → Normal dialer
         window.location.href = "tel:" + phoneNumber;
       } else {
-        // Fallback → Just show dialer
+        // Other devices → Normal dialer
         window.location.href = "tel:" + phoneNumber;
       }
     });
