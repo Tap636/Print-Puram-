@@ -12,7 +12,7 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome for Call Icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -50,7 +50,7 @@
       font-size: 20px;
       font-weight: 700;
       color: #3A2317;
-      margin: 10px 0 25px 0;
+      margin: 20px 0 25px 0;
       text-decoration: underline;
     }
 
@@ -88,10 +88,10 @@
   <div class="title">Print Puram</div>
   <div class="subtitle">Print Perfect Hai !</div>
 
-  <!-- Call Us Button -->
-  <div class="button-container" style="margin-bottom:20px;">
-    <a href="#" class="button" onclick="callUs()">
-      <i class="fas fa-phone"></i> Call Us
+  <!-- Call Now Button (same style as others) -->
+  <div class="button-container" style="margin-bottom: 20px;">
+    <a href="tel:+919027085434" class="button">
+      <i class="fas fa-phone"></i> Call Now
     </a>
   </div>
 
@@ -116,20 +116,6 @@
       const email = "puramprint@gmail.com";
       const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject + " - " + code)}&body=Namaste PrintPuram,`;
       window.location.href = mailtoLink;
-    }
-
-    function callUs() {
-      const phoneNumber = "919027085434"; // Change to your number
-      if (/android/i.test(navigator.userAgent)) {
-        // ✅ WhatsApp Call (Android)
-        window.location.href = `whatsapp://call?phone=${phoneNumber}`;
-      } else if (/iphone|ipad|ipod/i.test(navigator.userAgent)) {
-        // ✅ iOS → Normal Dialer
-        window.location.href = `tel:${phoneNumber}`;
-      } else {
-        // ✅ Fallback for desktop/other devices
-        window.location.href = `tel:${phoneNumber}`;
-      }
     }
   </script>
 </body>
