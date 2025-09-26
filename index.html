@@ -2,235 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NGVM PASSCAP</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact PrintPuram</title>
+
+  <!-- Stop caching -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Call Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, #ff7e00, #0077ff);
-      color: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Montserrat', sans-serif;
       text-align: center;
+      background: linear-gradient(135deg, #3A2317, #F3E8DA);
     }
-    header {
-      background: rgba(0,0,0,0.3);
-      padding: 15px;
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      position: relative;
+
+    .logo {
+      width: 180px;
+      margin-top: 20px;
     }
-    #newProjectBtn {
-      position: absolute;
-      left: 15px;
-      bottom: -40px;
-      background: #fff;
-      color: #333;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-      font-weight: bold;
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #3A2317;
+      margin: 10px 0 5px 0;
     }
-    video, canvas {
-      border: 3px solid #fff;
-      border-radius: 10px;
-      margin: 20px auto;
-      display: block;
-      max-width: 90%;
-      height: auto;
-    }
-    .hidden {
-      display: none;
-    }
-    input, select, button {
-      padding: 10px;
-      margin: 8px;
+
+    .subtitle {
       font-size: 16px;
+      font-weight: 400;
+      color: #3A2317;
+      margin: 0 0 10px 0;
+    }
+
+    .mail-heading {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3A2317;
+      margin: 20px 0 25px 0;
+      text-decoration: underline;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #F3E8DA;
+      background: #3A2317;
+      text-decoration: none;
       border-radius: 8px;
-      border: none;
+      transition: background 0.3s;
     }
-    button {
-      background: #fff;
-      color: #333;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover {
-      background: #eee;
-    }
-    .form-container {
-      margin-top: 15px;
-    }
-    .download-section {
-      margin: 20px;
+
+    a.button:hover {
+      background: #2a1910;
     }
   </style>
 </head>
 <body>
+  <!-- Logo -->
+  <img src="logo-new.png" alt="PrintPuram Logo" class="logo">
 
-  <header>
-    📸 NGVM PASSCAP
-    <button id="newProjectBtn">New Project</button>
-  </header>
+  <!-- Texts -->
+  <div class="title">Print Puram</div>
+  <div class="subtitle">Print Perfect Hai !</div>
 
-  <!-- Live Camera -->
-  <video id="video" autoplay playsinline width="480" height="360"></video>
-  <br>
-  <button id="captureBtn">Capture Photo</button>
-
-  <!-- Captured Canvas -->
-  <canvas id="canvas" width="480" height="600" class="hidden"></canvas>
-
-  <!-- Form Section -->
-  <div id="formSection" class="hidden form-container">
-    <h3>Enter Details</h3>
-    <input type="text" id="studentName" placeholder="Student Name" required>
-    
-    <select id="studentClass" required>
-      <option value="">Select Class</option>
-      <option value="NUR">NUR</option>
-      <option value="LKG">LKG</option>
-      <option value="UKG">UKG</option>
-      <option value="1st">1st</option>
-      <option value="2nd">2nd</option>
-      <option value="3rd">3rd</option>
-      <option value="4th">4th</option>
-      <option value="5th">5th</option>
-      <option value="6th">6th</option>
-      <option value="7th">7th</option>
-      <option value="8th">8th</option>
-      <option value="9th">9th</option>
-      <option value="10th">10th</option>
-      <option value="11th">11th</option>
-      <option value="12th">12th</option>
-    </select>
-    <br>
-    <button id="saveBtn">Save Photo</button>
-    <button id="newCaptureBtn">Capture New Photo</button>
+  <!-- Call Now Button (same style as others) -->
+  <div class="button-container" style="margin-bottom: 20px;">
+    <a href="tel:+919027085434" class="button">
+      <i class="fas fa-phone"></i> Call Now
+    </a>
   </div>
 
-  <!-- Download ZIP -->
-  <div class="download-section">
-    <select id="downloadClass">
-      <option value="">Select Class for ZIP</option>
-      <option value="NUR">NUR</option>
-      <option value="LKG">LKG</option>
-      <option value="UKG">UKG</option>
-      <option value="1st">1st</option>
-      <option value="2nd">2nd</option>
-      <option value="3rd">3rd</option>
-      <option value="4th">4th</option>
-      <option value="5th">5th</option>
-      <option value="6th">6th</option>
-      <option value="7th">7th</option>
-      <option value="8th">8th</option>
-      <option value="9th">9th</option>
-      <option value="10th">10th</option>
-      <option value="11th">11th</option>
-      <option value="12th">12th</option>
-    </select>
-    <button id="downloadZipBtn">Download ZIP</button>
+  <!-- Mail Us heading -->
+  <div class="mail-heading">Mail Us</div>
+
+  <!-- Buttons -->
+  <div class="button-container">
+    <a href="#" class="button" onclick="sendMail('Raise Query')">Raise Query</a>
+    <a href="#" class="button" onclick="sendMail('Complaints')">Complaints</a>
+    <a href="#" class="button" onclick="sendMail('Suggestions')">Suggestions</a>
   </div>
 
   <script>
-    const video = document.getElementById('video');
-    const canvas = document.getElementById('canvas');
-    const context = canvas.getContext('2d');
-    const captureBtn = document.getElementById('captureBtn');
-    const formSection = document.getElementById('formSection');
-    const saveBtn = document.getElementById('saveBtn');
-    const newCaptureBtn = document.getElementById('newCaptureBtn');
-    const newProjectBtn = document.getElementById('newProjectBtn');
-    const downloadClass = document.getElementById('downloadClass');
-    const downloadZipBtn = document.getElementById('downloadZipBtn');
+    function generateCode() {
+      // Random 6-digit alphanumeric code
+      return Math.random().toString(36).substr(2, 6).toUpperCase();
+    }
 
-    // Store captured photos
-    let photos = [];
-
-    // ✅ Open rear camera
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
-      .then(stream => {
-        video.srcObject = stream;
-      })
-      .catch(err => {
-        alert("Camera access denied: " + err);
-      });
-
-    // ✅ Capture photo
-    captureBtn.addEventListener('click', () => {
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
-      canvas.classList.remove('hidden');
-      formSection.classList.remove('hidden');
-      video.classList.add('hidden');
-      captureBtn.classList.add('hidden');
-    });
-
-    // ✅ Save photo
-    saveBtn.addEventListener('click', () => {
-      const studentName = document.getElementById('studentName').value.trim();
-      const studentClass = document.getElementById('studentClass').value.trim();
-
-      if (!studentName || !studentClass) {
-        alert("Please enter both name and class!");
-        return;
-      }
-
-      canvas.toBlob(blob => {
-        photos.push({ class: studentClass, name: studentName, blob });
-      }, 'image/jpeg');
-
-      // Reset for next capture
-      document.getElementById('studentName').value = '';
-      document.getElementById('studentClass').value = '';
-      canvas.classList.add('hidden');
-      formSection.classList.add('hidden');
-      video.classList.remove('hidden');
-      captureBtn.classList.remove('hidden');
-    });
-
-    // ✅ New Capture
-    newCaptureBtn.addEventListener('click', () => {
-      canvas.classList.add('hidden');
-      formSection.classList.add('hidden');
-      video.classList.remove('hidden');
-      captureBtn.classList.remove('hidden');
-    });
-
-    // ✅ New Project (clear all photos)
-    newProjectBtn.addEventListener('click', () => {
-      if (confirm("Are you sure you want to start a new project? All saved images will be lost.")) {
-        photos = [];
-        alert("New project started. All previous data cleared.");
-      }
-    });
-
-    // ✅ Download ZIP for class
-    downloadZipBtn.addEventListener('click', () => {
-      const selectedClass = downloadClass.value;
-      if (!selectedClass) {
-        alert("Please select a class!");
-        return;
-      }
-
-      const classPhotos = photos.filter(p => p.class === selectedClass);
-      if (classPhotos.length === 0) {
-        alert("No photos found for " + selectedClass);
-        return;
-      }
-
-      const zip = new JSZip();
-      classPhotos.forEach((p, i) => {
-        const fileName = `${p.class}-${p.name || 'student'}-${i+1}.jpg`;
-        zip.file(fileName, p.blob);
-      });
-
-      zip.generateAsync({ type: "blob" }).then(content => {
-        saveAs(content, `${selectedClass}_photos.zip`);
-      });
-    });
+    function sendMail(subject) {
+      const code = generateCode();
+      const email = "puramprint@gmail.com";
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject + " - " + code)}&body=Namaste PrintPuram,`;
+      window.location.href = mailtoLink;
+    }
   </script>
-
 </body>
 </html>
